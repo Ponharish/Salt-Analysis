@@ -280,7 +280,7 @@ def test():
 
         
         
-        root.mainloop()
+        
     def testforcation():
         global testforcationframe
         global possiblecationlist
@@ -734,7 +734,7 @@ def test():
 
         
         
-        root.mainloop()
+        
             
     def possibleresults():
         def seeresults():
@@ -1309,3 +1309,5 @@ def test():
     
 
 test()
+root.mainloop()
+

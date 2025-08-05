@@ -1,6 +1,6 @@
 # Salt Analysis 
 
-## 📌 What is this?
+## What is this?
 
 This application is an educational tool built using Python and Tkinter. 
 It guides the students step-by-step through standard laboratory tests 
@@ -8,7 +8,7 @@ to help identify the **cation and anion** present in a given salt sample.
 
 ---
 
-## 🎯 Main Features
+## Main Features
 
 - An extensive step-by-step guide for the various tests for detecting ions.
 - Separate tests for **Anions** and **Cations**.
@@ -67,6 +67,7 @@ This is great for **learning and revision**!
 
 Click the **“Restart”** button at the bottom to clear all current selections and start fresh.
 
+---
 
 ## Important Note
 
@@ -74,7 +75,7 @@ Click the **“Restart”** button at the bottom to clear all current selections
 
 ---
 
-## 👩‍🔬 Educational Use
+## Educational Use
 
 This program can be used in:
 - A live guide in chemistry lab
