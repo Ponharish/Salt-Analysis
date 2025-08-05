@@ -1,0 +1,43 @@
+name: Build macOS App + DMG
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-macos:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyinstaller -r requirements.txt
+
+    - name: Build app with PyInstaller
+      run: |
+        pyinstaller --noconfirm --windowed --name "Salt Analysis" "Salt Analysis.py"
+
+    - name: Prepare DMG folder
+      run: |
+        mkdir dmg_folder
+        cp -R dist/Salt\ Analysis.app dmg_folder/
+        echo "Instructions:\nRight-click > Open to bypass Gatekeeper" > dmg_folder/README.txt
+
+    - name: Create DMG
+      run: |
+        hdiutil create -volname "Salt Analysis" -srcfolder dmg_folder -ov -format UDZO SaltAnalysis.dmg
+
+    - name: Upload DMG Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: SaltAnalysis-macOS
+        path: SaltAnalysis.dmg
