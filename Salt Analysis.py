@@ -1,4 +1,5 @@
 from tkinter import *
+
 root = Tk()
 root.geometry("%dx%d+%d+%d" % (1000, 1000, 2000, 150))
 root.title('Salt Analysis')
